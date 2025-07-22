@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <style>
+        .vertical-aside {
+  position: fixed;
+  top: 50px; /* 네비게이션 바 아래로 내리기 */
+  left: 0;
+  height: calc(100% - 60px); /* 상단 바 높이만큼 줄이기 */
+  width: 70px;
+  font-size:9px;
+  background-color: #f8f9fa;
+  z-index: 1000;
+  padding-top: 20px;
+  padding-bottom:10px;
+  text-align:center;
+}
+.vertical-aside .nav-link{
+  padding: 10px 15px;
+  color: #333;
+  margin-bottom:10px;
+}
+.vertical-aside .nav-item {
+padding-top: 10px;
+  padding-bottom:10px;
+}
+.vertical-aside .nav-item:hover {
+  background-color: #e2e6ea;
+padding-top: 10px;
+  padding-bottom:10px;
+  border-radius:30px;
+}
+
+/* 상단 navbar에 z-index 적용 */
+.navbar {
+  z-index: 1100;
+  position: relative;
+  padding-left:70px;
+}
+        .d-flex {
+        margin-left:150px;
+        }
+        .d-flex input {
+        width:370px;
+        border-radius:30px;
+        }
+        .mic {
+  border-radius: 30px;
+  border: 1px solid #198754; /* Bootstrap success 색상 */
+  background-color: transparent;
+  color: #198754;
+  padding: 6px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mic i {
+  font-size: 16px;
+}
+       .sub-nav {
+  margin-left: 100px;
+}
+
+.sub-nav ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sub-nav ul li {
+  background-color: lightgray;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+  font-size: 10px;
+  width: auto; /* 글자 수에 따라 자동 너비 */
+}
+        .sub-nav ul li a {
+  color: black;
+  text-decoration:none;
+  font-size:10px;
+        }
+.sub-nav ul li:hover {
+  background-color: darkgray;
+  color:white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+  font-size: 10px;
+  width: auto; /* 글자 수에 따라 자동 너비 */
+}
+
+.card-group {
+padding-top:30px;
+padding-left:90px;
+}
+        .card {
+        padding-left: 20px;
+        border:none;
+        overflow: hidden;
+
+        }
+        .card:hover {
+        cursor:pointer;
+        }
+        .card img {
+         width: 100%;
+  transition: transform 0.3s ease;
+
+
+        }
+        .card img:hover {
+        transform: scale(1.1);
+
+        }
+    </style>
+    <script>
+  // 예시용 연관 검색어
+  const suggestions = [
+    "넷플릭스",
+    "정보처리기사",
+    "AI 전문가 특강",
+    "초여름 플레이리스트",
+    "마감 직전 음악",
+    "게임 스트리머",
+    "요리 레시피",
+    "문학 추천",
+    "팟캐스트 인기",
+    "K-pop"
+  ];
+
+  const input = document.getElementById("searchInput");
+  const dropdown = document.getElementById("suggestionList");
+
+  input.addEventListener("input", function () {
+    const query = input.value.trim().toLowerCase();
+    dropdown.innerHTML = "";
+
+    if (query.length === 0) {
+      dropdown.style.display = "none";
+      return;
+    }
+
+    const filtered = suggestions.filter(item => item.toLowerCase().includes(query));
+
+    if (filtered.length === 0) {
+      dropdown.style.display = "none";
+      return;
+    }
+
+    filtered.forEach(item => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a class="dropdown-item" href="#">${item}</a>`;
+      dropdown.appendChild(li);
+    });
+
+    dropdown.style.display = "block";
+  });
+
+  // 포커스를 잃으면 메뉴 숨기기
+  input.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.style.display = "none";
+    }, 200);
+  });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../images/ytlogo.png" alt=""></a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <form class="d-flex position-relative">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="검색" aria-label="Search" autocomplete="off">
+
+                <ul id="suggestionList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1200;">
+                    <!-- JS가 여기에 검색어 추천을 추가함 -->
+                </ul>
+
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="fi fi-rr-search"></i>
+                </button>
+
+                <button class="mic" type="button">
+                    <i class="fi fi-ss-circle-microphone"></i>
+                </button>
+            </form>
+        </div>
+
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <aside class="vertical-aside">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <br>
+                <i class="fi fi-ss-house-chimney"></i>
+                <a class="nav-link active" aria-current="page" href="#">홈</a>
+            </li>
+            <br>
+            <li class="nav-item">
+                <i class="fi fi-rs-file-video"></i>
+                <a class="nav-link" href="https://www.youtube.com/shorts/PPK4Dyk6_fo">Shorts</a>
+            </li>
+            <br>
+            <li class="nav-item">
+                <i class="fi fi-bs-video-duration"></i>
+                <a class="nav-link" href="#">구독</a>
+            </li>
+            <br>
+            <li class="nav-item">
+                <i class="fi fi-rr-user"></i>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">내 페이지</a>
+            </li>
+            <br>
+            <li class="nav-item">
+                <i class="fi fi-rr-time-past"></i>
+                <a class="nav-link" href="#">시청기록</a>
+            </li>
+        </ul>
+    </aside>
+</nav>
+<div class="sub-nav">
+    <ul>
+        <li><a href="">전체</a></li>
+        <li><a href="https://www.youtube.com/">음악</a></li>
+        <li><a href="">뉴스</a></li>
+        <li><a href="">라이브</a></li>
+        <li><a href="">팟캐스트</a></li>
+        <li><a href="">믹스</a></li>
+        <li><a href="">게임</a></li>
+        <li><a href="">문학</a></li>
+        <li><a href="">수학</a></li>
+        <li><a href="">요리</a></li>
+        <li><a href="">최근에 업로드된 동영상</a></li>
+        <li><a href="">감상한 동영상</a></li>
+    </ul>
+</div>
+<div class="card-group">
+    <div class="card">
+        <img src="./src/images/s1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>청량한 날 듣는 가슴 벅차오르는 청춘 플레이리스트 | 청춘 + 초여름 = 극락</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>시끄러운 건 싫고 둠칫한 건 좋아 | 일할 때 듣기 좋은 플레이리스트</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>2025 인공지능 전문가 특강 | ChatGPT 이후3년, 달라진 우리 사회</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+        <img src="./src/images/s4.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>넷플릭스 화제의 신작 애니 : Saja Boys - Your Idol | 케이팝 데몬 헌터스 | 넷플릭스 | 가사해석</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s5.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>[정보처리기사 올인원]1-1-1.소프트웨어 개발 방법론</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s6.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>Playlist 망했다... 마감 두시간 전 | 집중 안될때 듣기 좋은 트렌디한 팝송 플리</b></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
