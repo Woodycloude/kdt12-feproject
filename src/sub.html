@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <style>
+        .navbar {
+  z-index: 1100;
+  position: relative;
+  padding-left:70px;
+}
+        .d-flex {
+        margin-left:150px;
+        }
+        .d-flex input {
+        width:370px;
+        border-radius:30px;
+        }
+        .mic {
+  border-radius: 30px;
+  border: 1px solid #198754; /* Bootstrap success 색상 */
+  background-color: transparent;
+  color: #198754;
+  padding: 6px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mic i {
+  font-size: 16px;
+}
+        .video {
+  padding-top:130px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 1000px;
+  height: 550px;
+  overflow: hidden;
+}
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../images/ytlogo.png" alt=""></a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <form class="d-flex position-relative">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="검색" aria-label="Search" autocomplete="off">
+
+                <ul id="suggestionList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1200;">
+                    <!-- JS가 여기에 검색어 추천을 추가함 -->
+                </ul>
+
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="fi fi-rr-search"></i>
+                </button>
+                <button class="mic" type="button">
+                    <i class="fi fi-ss-circle-microphone"></i>
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Qx8Stqr9XZM?si=2LA4J4-E2Eif0DvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="page-layout">
+        <div class="card-stack">
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss1.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>Playlist 덥고 짜증날땐 이런노래지 | 여름노래 추천</b></p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss2.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>아무생각없이 듣기좋은 노래 Playlist | 드라마 OST</b></p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-ss-house-chimney"></i> 홈</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-rs-file-video"></i> Shorts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-bs-video-duration"></i> 구독</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-rr-user"></i> 내 페이지</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-rr-time-past"></i> 시청기록</a></li>
+        </ul>
+    </aside>
+
+
+</body>
+</html>
