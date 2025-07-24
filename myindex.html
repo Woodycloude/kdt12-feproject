@@ -168,7 +168,7 @@ padding-left:90px;
     dropdown.style.display = "block";
   });
 
-  // 포커스를 잃으면 메뉴 숨기기
+  //포커스를 잃으면 메뉴 숨기기
   input.addEventListener("blur", () => {
     setTimeout(() => {
       dropdown.style.display = "none";
@@ -187,7 +187,6 @@ padding-left:90px;
                 <ul id="suggestionList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1200;">
                     <!-- JS가 여기에 검색어 추천을 추가함 -->
                 </ul>
-
                 <button class="btn btn-outline-success" type="submit">
                     <i class="fi fi-rr-search"></i>
                 </button>
