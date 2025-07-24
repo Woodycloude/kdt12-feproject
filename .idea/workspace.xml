@@ -4,56 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a7125e6-7cd6-42b6-9295-1e062d2c1093" name="Changes" comment="add:myindex.html file&#10;Docs:네비게이션바, 드롭다운메뉴 , 카드그룹 일부 수정">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kdt12-feproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/gb1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/mp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/s9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/see.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/short.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ss7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/sub.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ytlogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/index.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/views.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sub.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/youtube-clone/myindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7a7125e6-7cd6-42b6-9295-1e062d2c1093" name="Changes" comment="add:myindex.html file&#10;Docs:네비게이션바, 드롭다운메뉴 , 카드그룹 일부 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
