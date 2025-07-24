@@ -60,7 +60,7 @@ padding-top: 10px;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FCEDAA;
+  background-color: #ffff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -69,21 +69,24 @@ padding-top: 10px;
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: #363636;
   display: block;
   transition: 0.3s;
 }
+.sidenav p {
+font-size:10px;
+}
 
 .sidenav a:hover {
-  color: #A9CFE2;
+  color: #ffff;
 }
 
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 35px;
   margin-left: 50px;
 }
 
