@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
@@ -15,9 +16,13 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="./server.js">
     <link rel="stylesheet" href="./comment.js">
-    <style>
+    <!-- Bootstrap JS + Popper.js (필수) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous">
+    </script>
+        <style>
         body {
         margin: 0;
         font-family: 'Segoe UI', sans-serif;
@@ -26,6 +31,41 @@
 z-index: 1100;
 position: relative;
 padding-left:70px;
+}
+// 디플렉스 전까지 검색바 예시 코드
+.youtube-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.youtube-search input {
+  flex: 1;
+  border-radius:30px;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  width:400px;
+}
+
+.search-btn,
+.mic-btn {
+  background: none;
+  border: none;
+  padding: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.search-btn:hover,
+.mic-btn:hover {
+  color: #000;
 }
       .d-flex {
       margin-left:150px;
@@ -42,14 +82,15 @@ font-family: 'Noto Sans KR', sans-serif;
         display: flex;
         min-height: 100vh;
 }
- .mic {
-  border-radius: 30px;
-  border: 1px solid #198754; /* Bootstrap success 색상 */
-  background-color: transparent;
-  color: #198754;
-  padding: 6px 15px;
-  margin-left: 10px;
+.mic {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 24px; /* 아이콘 크기 조절 */
   cursor: pointer;
+  color: inherit; /* 부모 컬러 상속 (필요시 지정 가능) */
+  line-height: 1;
 }
 /* 콘텐츠 배치 */
 .content-area {
@@ -98,7 +139,6 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.05);
           font-size: 11px;
           color: #888;
         }
-
 /* 아이프레임 고정 영역 */
 .video-wrapper {
 position: sticky;
@@ -258,25 +298,66 @@ function handleSave() {
   }).then(res => res.json())
     .then(data => alert('구독 완료'));
 });
+   const resultBox = document.getElementById('result');
+
+  function startRecognition() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('음성 인식을 지원하지 않는 브라우저입니다.');
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'ko-KR'; // 한국어 인식
+    recognition.interimResults = false;
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      resultBox.textContent = `인식 결과: ${transcript}`;
+    };
+
+    recognition.onerror = (event) => {
+      console.error('인식 오류:', event.error);
+    };
+
+    recognition.start();
+  }
+
+
     </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><img src="../images/ytlogo.png" alt=""></a>
     <div class="container-fluid">
-        <form class="d-flex position-relative">
-            <input id="searchInput" class="form-control me-2" type="search" placeholder="검색">
-            <ul id="suggestionList" class="dropdown-menu" style="display:none;"></ul>
-            <button class="btn btn-outline-success" type="submit"><i class="fi fi-rr-search"></i></button>
-            <button class="mic" type="button"><i class="fi fi-ss-circle-microphone"></i></button>
+        <div class="youtube-search">
+            <input type="search" id="searchInput" placeholder="검색어를 입력하세요">
+            <button type="submit" class="search-btn">
+                <i class="fi fi-rr-search"></i>
+            </button>
+            <button class="mic" type="button" onclick="startRecognition()"
+            ><i class="fi fi-ss-circle-microphone"></i></button>
+            <p id="result"></p>
+        </div>
             <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown link
+                <a class="btn border-0 bg-transparent" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fi fi-rr-menu-dots-vertical"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">Google 계정</a></li>
+                    <li><a class="dropdown-item" href="#">계정 전환</a></li>
+                    <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                    <li><a class="dropdown-item" href="#">YouTube 스튜디오</a></li>
+                    <li><a class="dropdown-item" href="#">구매 항목 및 멤버십</a></li>
+                    <li><a class="dropdown-item" href="#">YouTube의 내 데이터</a></li>
+                    <li><a class="dropdown-item" href="#">디자인:기기 테마</a></li>
+                    <li><a class="dropdown-item" href="#">언어:한국어</a></li>
+                    <li><a class="dropdown-item" href="#">제한 모드: 사용 안함</a></li>
+                    <li><a class="dropdown-item" href="#">위치:한국</a></li>
+                    <li><a class="dropdown-item" href="#">단축키</a></li>
+                    <li><a class="dropdown-item" href="#">설정</a></li>
+                    <li><a class="dropdown-item" href="#">고객센터</a></li>
+                    <li><a class="dropdown-item" href="#">의견 보내기</a></li>
                 </ul>
             </div>
         </form>
