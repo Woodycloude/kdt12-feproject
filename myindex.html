@@ -8,193 +8,127 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <style>
-        .vertical-aside {
-  position: fixed;
-  top: 50px; /* 네비게이션 바 아래로 내리기 */
-  left: 0;
-  height: calc(100% - 60px); /* 상단 바 높이만큼 줄이기 */
-  width: 70px;
-  font-size:9px;
-  background-color: #f8f9fa;
-  z-index: 1000;
-  padding-top: 20px;
-  padding-bottom:10px;
-  text-align:center;
-}
-.vertical-aside .nav-link{
-  padding: 10px 15px;
-  color: #333;
-  margin-bottom:10px;
-}
-.vertical-aside .nav-item {
-padding-top: 10px;
-  padding-bottom:10px;
-}
-.vertical-aside .nav-item:hover {
-  background-color: #e2e6ea;
-padding-top: 10px;
-  padding-bottom:10px;
-  border-radius:30px;
-}
-
-/* 상단 navbar에 z-index 적용 */
-.navbar {
-  z-index: 1100;
-  position: relative;
-  padding-left:70px;
-}
-        .d-flex {
-        margin-left:150px;
-        }
-        .d-flex input {
-        width:370px;
-        border-radius:30px;
-        }
-        .mic {
-  border-radius: 30px;
-  border: 1px solid #198754; /* Bootstrap success 색상 */
-  background-color: transparent;
-  color: #198754;
-  padding: 6px 15px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.mic i {
-  font-size: 16px;
-}
-       .sub-nav {
-  margin-left: 100px;
-}
-
-.sub-nav ul {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style-type: none;
-}
-
-.sub-nav ul li {
-  background-color: lightgray;
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
-  white-space: nowrap; /* 줄바꿈 방지 */
-  font-size: 10px;
-  width: auto; /* 글자 수에 따라 자동 너비 */
-}
-        .sub-nav ul li a {
-  color: black;
-  text-decoration:none;
-  font-size:10px;
-        }
-.sub-nav ul li:hover {
-  background-color: darkgray;
-  color:white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
-  white-space: nowrap; /* 줄바꿈 방지 */
-  font-size: 10px;
-  width: auto; /* 글자 수에 따라 자동 너비 */
-}
-
-.card-group {
-padding-top:30px;
-padding-left:90px;
-}
-        .card {
-        padding-left: 20px;
-        border:none;
-        overflow: hidden;
-
-        }
-        .card:hover {
-        cursor:pointer;
-        }
-        .card img {
-         width: 100%;
-  transition: transform 0.3s ease;
-
-
-        }
-        .card img:hover {
-        transform: scale(1.1);
-
-        }
-    </style>
-    <script>
-  // 예시용 연관 검색어
-  const suggestions = [
-    "넷플릭스",
-    "정보처리기사",
-    "AI 전문가 특강",
-    "초여름 플레이리스트",
-    "마감 직전 음악",
-    "게임 스트리머",
-    "요리 레시피",
-    "문학 추천",
-    "팟캐스트 인기",
-    "K-pop"
-  ];
-
-  const input = document.getElementById("searchInput");
-  const dropdown = document.getElementById("suggestionList");
-
-  input.addEventListener("input", function () {
-    const query = input.value.trim().toLowerCase();
-    dropdown.innerHTML = "";
-
-    if (query.length === 0) {
-      dropdown.style.display = "none";
-      return;
-    }
-
-    const filtered = suggestions.filter(item => item.toLowerCase().includes(query));
-
-    if (filtered.length === 0) {
-      dropdown.style.display = "none";
-      return;
-    }
-
-    filtered.forEach(item => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a class="dropdown-item" href="#">${item}</a>`;
-      dropdown.appendChild(li);
-    });
-
-    dropdown.style.display = "block";
-  });
-  //포커스를 잃으면 메뉴 숨기기
-  input.addEventListener("blur", () => {
-    setTimeout(() => {
-      dropdown.style.display = "none";
-    }, 200);
-  });
-    </script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel="stylesheet" href="./src/index.css">
+    <link rel="stylesheet" href="./src/index.js">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
     <a class="navbar-brand" href="#"><img src="../images/ytlogo.png" alt=""></a>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <form class="d-flex position-relative">
-                <input id="searchInput" class="form-control me-2" type="search" placeholder="검색" aria-label="Search" autocomplete="off">
-
-                <ul id="suggestionList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1200;">
-                    <!-- JS가 여기에 검색어 추천을 추가함 -->
-                </ul>
-                <button class="btn btn-outline-success" type="submit">
+            <div class="youtube-search">
+                <div class="search-container">
+                <input type="search" id="searchInput" placeholder="검색">
+                <button type="submit" class="search-btn">
                     <i class="fi fi-rr-search"></i>
                 </button>
-
-                <button class="mic" type="button">
-                    <i class="fi fi-ss-circle-microphone"></i>
-                </button>
-            </form>
+                    <button class="mic" type="button" onclick="startRecognition()"><i class="fi fi-ss-circle-microphone"></i></button>
+                    <p id="result"></p>
+                </div>
+                <div class="dropdown">
+                    <a class="btn border-0 bg-transparent" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fi fi-rr-menu-dots-vertical"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Google 계정</a></li>
+                        <li><a class="dropdown-item" href="#">계정 전환</a></li>
+                        <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="#">YouTube 스튜디오</a></li>
+                        <li><a class="dropdown-item" href="#">구매 항목 및 멤버십</a></li>
+                        <li><a class="dropdown-item" href="#">YouTube의 내 데이터</a></li>
+                        <li><a class="dropdown-item" href="#">디자인:기기 테마</a></li>
+                        <li><a class="dropdown-item" href="#">언어:한국어</a></li>
+                        <li><a class="dropdown-item" href="#">제한 모드: 사용 안함</a></li>
+                        <li><a class="dropdown-item" href="#">위치:한국</a></li>
+                        <li><a class="dropdown-item" href="#">단축키</a></li>
+                        <li><a class="dropdown-item" href="#">설정</a></li>
+                        <li><a class="dropdown-item" href="#">고객센터</a></li>
+                        <li><a class="dropdown-item" href="#">의견 보내기</a></li>
+                    </ul>
+                </div>
+                </form>
         </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"><i class="fi fi-ss-house-chimney"></i> 홈</a>
+            <a href="#"><i class="fi fi-rs-file-video"></i> Shorts</a>
+            <a href="#"><i class="fi fi-bs-video-duration"></i> 구독</a>
+            <hr>
+            <a href="#">내 페이지 ></a>
+            <a href="#"><i class="fi fi-rr-time-past"></i> 시청 기록</a>
+            <a href="#"><i class="fi fi-bs-list-music"></i> 재생목록</a>
+            <a href="#"><i class="fi fi-br-play-alt"></i> 내 동영상</a>
+            <a href="#"><i class="fi fi-rr-time-check"></i> 나중에 볼 동영상</a>
+            <a href="#"><i class="fi fi-sr-thumbs-up"></i> 좋아요 표시한 동영상</a>
+            <hr>
+            <h5>탐색</h5>
+            <a href="#"><i class="fi fi-rs-meteor"></i> 인기 급상승</a>
+            <a href="#"><i class="fi fi-bs-shopping-bag"></i> 쇼핑</a>
+            <a href="#"><i class="fi fi-bs-music-alt"></i> 음악</a>
+            <a href="#"><i class="fi fi-ss-clapper-open"></i> 영화</a>
+            <a href="#"><i class="fi fi-sr-broadcast-tower"></i> 실시간</a>
+            <a href="#"><i class="fi fi-rr-gamepad"></i> 게임</a>
+            <a href="#"><i class="fi fi-rr-trophy"></i> 스포츠</a>
+            <a href="#"><i class="fi fi-ss-lesson"></i> 학습 프로그램</a>
+            <a href="#"><i class="fi fi-ss-podcast"></i> 팟캐스트</a>
+            <hr>
+            <h5>YouTube 더보기</h5>
+            <a href="#"><i class="fi fi-brands-youtube"></i> YouTube Premium</a>
+            <a href="#"><i class="fi fi-brands-youtube"></i> Youtube 스튜디오</a>
+            <a href="#"><i class="fi fi-ss-video-duration"></i> YouTube Music</a>
+            <a href="#"><i class="fi fi-brands-youtube"></i> YouTube Kids</a>
+            <hr>
+            <a href="#"><i class="fi fi-ss-settings"></i> 설정</a>
+            <a href="#"><i class="fi fi-rr-flag-alt"></i> 신고 기록</a>
+            <a href="#"><i class="fi fi-rs-interrogation"></i> 고객센터</a>
+            <a href="#"><i class="fi fi-rs-exclamation"></i> 의견 보내기</a>
+            <hr>
+            <p>정보 보도자료 저작권 문의하기 <br> 크리에이터 광고 개발자</p>
+            <p>약관 개인정보처리방침 <br>
+            정책 및 안전 <br>
+            YouTube 작동의 원리 <br>
+            새로운 기능 테스트하기</p>
+            <p><small>&copy; 2025 Google LLC, Sunder Pichai, 1600 Amphitheatre Parkway, Mountain
+            View CA 94043, USA,
+            0807-882-594(무료), yt-support-solutions-kr@google.com,
+            호스팅:Google LLC,사업자정보,불법촬영물신고
+                <br> 크리에이터들이 유튜브 상에 게시, 태그 또는 추천한 상품들은 판매자들의 약관에 따라
+            판매됩니다. 유튜브는 이러한 제품들을 판매하지 않으며, 그에 대한 책임을 지지 않습니다.</small></p>
+        </div>
+
+        <!-- 🔸 메인 콘텐츠 영역 -->
+
+        <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
 
     </nav>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -252,21 +186,24 @@ padding-left:90px;
         <img src="./src/images/s1.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>청량한 날 듣는 가슴 벅차오르는 청춘 플레이리스트 | 청춘 + 초여름 = 극락</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 봄플리 <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 9개월 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s2.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>시끄러운 건 싫고 둠칫한 건 좋아 | 일할 때 듣기 좋은 플레이리스트</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 EDM 플리 <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 7천회 | 업로드 2년 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s3.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>2025 인공지능 전문가 특강 | ChatGPT 이후3년, 달라진 우리 사회</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">AI들려주는 학습채널 </small></p>
+            <p class="card-text"><small class="text-muted">조회수 1천회 | 업로드 7개월 전</small></p>
         </div>
     </div>
 </div>
@@ -275,21 +212,102 @@ padding-left:90px;
         <img src="./src/images/s4.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>넷플릭스 화제의 신작 애니 : Saja Boys - Your Idol | 케이팝 데몬 헌터스 | 넷플릭스 | 가사해석</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 리뷰오타쿠</small></p>
+            <p class="card-text"><small class="text-muted">조회수 13만회 | 업로드 3개월 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s5.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text"><b>[정보처리기사 올인원]1-1-1.소프트웨어 개발 방법론</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><b>[정보처리기사 올인원]1-1-1.소프트웨어 개발 방법론 | 한방에 합격하는 법</b></p>
+            <p class="card-text"><small class="text-muted">이기적 채널</small></p>
+            <p class="card-text"><small class="text-muted">조회수 3만회 | 업로드 7년 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s6.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>Playlist 망했다... 마감 두시간 전 | 집중 안될때 듣기 좋은 트렌디한 팝송 플리</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 재플리 <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 5개월 전</small></p>
+        </div>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+        <img src="./src/images/s7.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>[데몬헌터스 주제곡] GOLDEN - HUNTRIX / Cover by 바다</b></p>
+            <p class="card-text"><small class="text-muted">바다 BADA <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 9만회 | 업로드 11개월 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s8.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>[2시간 반복] 반야심경 반야심경 (Heart Sutra,KOR) | #윤회팝 #불교</b></p>
+            <p class="card-text"><small class="text-muted">GOMDAN</small></p>
+            <p class="card-text"><small class="text-muted">조회수 83만회 | 업로드 2년 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s9.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>이동욱x박훈 | "나래야, 너랑 대화가 안 된다" | 착한 사나이, 장도연 전화연결, 하얼빈</b></p>
+            <p class="card-text"><small class="text-muted">나래식 <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 5개월 전</small></p>
+        </div>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+        <img src="./src/images/s10.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>토스 통암기, 벼락치기 만능자료 무료배포 | 토익스피킹 일주일 만에 AL받는 방법 대공개 | 교재</b></p>
+            <p class="card-text"><small class="text-muted">토스미</small></p>
+            <p class="card-text"><small class="text-muted">조회수 10만회 | 업로드 3개월 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s11.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>AI 대응 특화 커리큘럼 구성 | 취업 경쟁력에 특화된 멋사캠프 | 합격생 후기 인터뷰</b></p>
+            <p class="card-text"><small class="text-muted">멋쟁이 사자처럼</small></p>
+            <p class="card-text"><small class="text-muted">조회수 3만회 | 업로드 7년 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s12.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>고문 같던 일을 잘 하게 되기까지 | LIFEPLUS PEOPLE ep.1 - 영화평론가 #김혜리</b></p>
+            <p class="card-text"><small class="text-muted">LIFEPLUS TV <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 25만회 | 업로드 5개월 전</small></p>
+        </div>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+        <img src="./src/images/s13.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>Playlist 하루종일 틀어놔도 질리지않는 이유 | 요즘 검색되는 노래 모음</b></p>
+            <p class="card-text"><small class="text-muted">Laura's</small></p>
+            <p class="card-text"><small class="text-muted">조회수 13만회 | 업로드 3개월 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s14.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>Love wins all (Love wins all) | 앨범발매 기념 프리뷰 영상공개</b></p>
+            <p class="card-text"><small class="text-muted">이지금[IU Official]</small></p>
+            <p class="card-text"><small class="text-muted">조회수 3만회 | 업로드 7년 전</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./src/images/s15.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"><b>명곡만 모은 느좋 여름 피아노 플레이리스트 | 베토벤 , 모차르트 모음</b></p>
+            <p class="card-text"><small class="text-muted">율디 피아노 Yuldau Piano <i class="fi fi-ss-check-circle"></i></small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 5개월 전</small></p>
         </div>
     </div>
 </div>
