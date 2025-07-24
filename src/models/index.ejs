@@ -1,0 +1,25 @@
+<h2>댓글 시스템</h2>
+
+<% if (!user) { %>
+  <form action="/login" method="POST">
+    <input type="text" name="username" placeholder="사용자 이름" required>
+    <button type="submit">로그인</button>
+  </form>
+<% } else { %>
+  <p><%= user %>님 환영합니다</p>
+  <form action="/logout" method="POST">
+    <button type="submit">로그아웃</button>
+  </form>
+
+  <form action="/comment" method="POST">
+    <textarea name="comment" required></textarea>
+    <button type="submit">댓글 작성</button>
+  </form>
+<% } %>
+
+<hr>
+<ul>
+<% comments.forEach(c => { %>
+  <li><strong><%= c.username %>:</strong> <%= c.content %></li>
+<% }) %>
+</ul>

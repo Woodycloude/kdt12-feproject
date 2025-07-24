@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 웹사이트</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <style>
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-wrapper {
+          display: flex;
+          min-height: 100vh;
+        }
+        .navbar {
+  z-index: 1100;
+  position: relative;
+  padding-left:70px;
+}
+.youtube-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  font-family: sans-serif;
+}
+
+.left-icons, .search-container, .right-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  padding: 6px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+        .d-flex {
+        margin-left:150px;
+        }
+        .d-flex input {
+        width:370px;
+        border-radius:30px;
+        }
+        .mic {
+  border-radius: 30px;
+  border: 1px solid #198754; /* Bootstrap success 색상 */
+  background-color: transparent;
+  color: #198754;
+  padding: 6px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mic i {
+  font-size: 16px;
+}
+<!--        /* 왼쪽 메인 콘텐츠 */-->
+<!--        .main-content {-->
+<!--          flex-grow: 1;-->
+<!--          padding: 40px;-->
+<!--          background-color: #fff;-->
+<!--        }-->
+      .layout-wrapper {
+    padding: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.content-area {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* 콘텐츠와 사이드바 간 간격 */
+    align-items: flex-start;
+}
+
+
+        .main-content {
+        flex: 3; /* 넓이 비율 설정 */
+    min-width: 0;
+  padding-top:10px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 900px;
+  height: 550px;
+}
+.main-content iframe {
+   margin-left:50px;
+    width: 100%;
+    max-width: 850px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+h3 {
+    margin: 10px 0 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-left:50px;
+}
+        /* 오른쪽 사이드바 */
+        .sidebar {
+         flex: 1;
+          width: 500px;
+          background-color: #f8f9fa;
+          padding-left:950px;
+          margin-left:950px;
+          overflow-y: auto;
+          padding: 10px;
+         max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar h4 {
+          margin-bottom: 20px;
+          font-size: 18px;
+        }
+
+        .custom-card {
+          width: 100%;
+          margin-bottom: 15px;
+          background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+
+        }
+
+        .custom-card img {
+         width: 100%;
+    height: auto;
+    object-fit: cover;
+        }
+
+        .custom-card .card-body p {
+          font-size: 13px;
+          margin: 0;
+        }
+
+        .custom-card small {
+          font-size: 11px;
+          color: #888;
+        }
+        .ytc {
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    margin-left:40px;
+}
+
+.ytc .row {
+    display: flex;
+    align-items: center;
+}
+
+.ytc img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.card-body {
+    padding-left: 10px;
+}
+
+.card-text {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.card-text small {
+    color: #999;
+}
+    </style>
+</head>
+<body>
+<!-- 상단 고정 메뉴바 -->
+<div class="youtube-topbar">
+    <div class="left-icons">
+        <img src="../images/ytlogo.png" alt="YouTube KR" class="logo">
+    </div>
+
+    <div class="search-container">
+        <input type="search" id="searchInput" placeholder="검색어를 입력하세요">
+        <button type="submit" class="search-btn">
+            <i class="fi fi-rr-search"></i>
+        </button>
+        <button class="mic" type="button" onclick="startRecognition()"><i class="fi fi-ss-circle-microphone"></i></button>
+        <p id="result"></p>
+    </div>
+
+    <div class="right-icons">
+        <button class="login-btn">로그인</button>
+        <div class="dropdown">
+            <a class="btn border-0 bg-transparent" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fi fi-rr-menu-dots-vertical"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Google 계정</a></li>
+                <li><a class="dropdown-item" href="#">계정 전환</a></li>
+                <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                <li><a class="dropdown-item" href="#">YouTube 스튜디오</a></li>
+                <li><a class="dropdown-item" href="#">구매 항목 및 멤버십</a></li>
+                <li><a class="dropdown-item" href="#">YouTube의 내 데이터</a></li>
+                <li><a class="dropdown-item" href="#">디자인:기기 테마</a></li>
+                <li><a class="dropdown-item" href="#">언어:한국어</a></li>
+                <li><a class="dropdown-item" href="#">제한 모드: 사용 안함</a></li>
+                <li><a class="dropdown-item" href="#">위치:한국</a></li>
+                <li><a class="dropdown-item" href="#">단축키</a></li>
+                <li><a class="dropdown-item" href="#">설정</a></li>
+                <li><a class="dropdown-item" href="#">고객센터</a></li>
+                <li><a class="dropdown-item" href="#">의견 보내기</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 본문 레이아웃 -->
+<div class="layout-wrapper">
+    <div class="content-area">
+    <main class="main-content">
+        <iframe src="https://www.youtube.com/embed/Z5Zn7QpF0jc?si=ijPANf3hy2hfexMw"
+                title="YouTube video"
+                allowfullscreen>
+        </iframe>
+        <h3>나는 애국가 대신 골든 [케이팝 데몬 헌터스 리뷰]</h3>
+
+        <!-- 이 위치로 ytc 이동 -->
+        <div class="ytc" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://yt3.ggpht.com/3fcYGck3RStzodgkeqfvE7xga68YzNFYuSzyNguVwzL6N4KxOiPJTuCO5GPZyIDZDpmWgnEbUA=s88-c-k-c0x00ffffff-no-rj" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">[하말넘많] heavytalker</p>
+                        <p class="card-text"><small class="text-muted">구독자 71.5만명</small><button>가입</button><button>구독</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+        <aside class="sidebar">
+            <h4>추천 플레이리스트</h4>
+
+            <!-- 카드 반복 가능 -->
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss1.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>매일 들으면 중독되는 Playlist | EDM</b></p>
+                            <p class="card-text"><small>쏠플리</small></p>
+                            <p class="card-text"><small>조회수 1천회 | 업로드 1년 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss2.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>Playlist | 드라마 OST</b></p>
+                            <p class="card-text"><small>채널 플리</small></p>
+                            <p class="card-text"><small>조회수 5천회 | 업로드 3년 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss3.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>노잼AI를 혼냈더니..?챗GPT와 함께 밸런스 게임</b></p>
+                            <p class="card-text"><small>채널 휘수</small></p>
+                            <p class="card-text"><small>조회수 13만회 | 업로드 4개월 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss4.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>케이팝 데몬 헌터스 본 과몰입 오타쿠들의 리뷰토크</b></p>
+                            <p class="card-text"><small>리뷰오타쿠</small></p>
+                            <p class="card-text"><small>조회수 2만회 | 업로드 1개월 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss5.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>[남천동生라이브]"익하"는 익현이들 하이(ft.최익현)입..</b></p>
+                            <p class="card-text"><small>사장남천동</small></p>
+                            <p class="card-text"><small>조회수 18만회 | 업로드 3개월 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss6.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>중세시대 키크는 비법 | 키작은 사람 시청주의</b></p>
+                            <p class="card-text"><small>채널 알쓸신잡</small></p>
+                            <p class="card-text"><small>조회수 1천회 | 업로드 2년 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 custom-card">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="./src/images/ss7.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-2">
+                            <p class="card-text"><b>조선시대 악질민원 | 상소문 이야기</b></p>
+                            <p class="card-text"><small>채널 역사속으로</small></p>
+                            <p class="card-text"><small>조회수 3만회 | 업로드 5개월 전</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+</body>
+</html>
