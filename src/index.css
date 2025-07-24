@@ -33,26 +33,76 @@ padding-top: 10px;
   position: relative;
   padding-left:70px;
 }
-        .d-flex {
-        margin-left:150px;
-        }
-        .d-flex input {
-        width:370px;
-        border-radius:30px;
-        }
-        .mic {
-  border-radius: 30px;
-  border: 1px solid #198754; /* Bootstrap success 색상 */
-  background-color: transparent;
-  color: #198754;
-  padding: 6px 15px;
-  margin-left: 10px;
-  cursor: pointer;
+.youtube-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius:30px;
+  padding: 5px;
+  margin: auto;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 5px;
 }
 
-.mic i {
+.search-container input {
+  flex: 1;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 45px 10px 15px; /* 오른쪽 공간 확보 */
   font-size: 16px;
+  outline: none;
 }
+.search-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.mic-btn {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+    margin-top: 10px;
+ line-height: 1;
+   border-radius: 50px;
+   transition: color 0.2s ease;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+.search-btn:hover,
+.mic-btn:hover {
+  color: #000;
+}
+.mic {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          font-size: 24px; /* 아이콘 크기 조절 */
+          cursor: pointer;
+          color: inherit; /* 부모 컬러 상속 (필요시 지정 가능) */
+          line-height: 1;
+          margin-left:500px;
+        }
 .sidenav {
   height: 100%;
   width: 0;
