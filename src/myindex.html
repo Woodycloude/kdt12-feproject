@@ -13,6 +13,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    </div>
     <a class="navbar-brand" href="#"><img src="../images/ytlogo.png" alt=""></a>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -32,6 +36,70 @@
                 </button>
             </form>
         </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">홈</a>
+            <a href="#">Shorts</a>
+            <a href="#">구독</a>
+            <hr>
+            <a href="#">내 페이지</a>
+            <a href="#">시청 기록</a>
+            <a href="#">재생목록</a>
+            <a href="#">내 동영상</a>
+            <a href="#">나중에 볼 동영상</a>
+            <a href="#">좋아요 표시한 동영상</a>
+            <hr>
+            <h5>탐색</h5>
+            <a href="#">인기 급상승</a>
+            <a href="#">쇼핑</a>
+            <a href="#">음악</a>
+            <a href="#">영화</a>
+            <a href="#">실시간</a>
+            <a href="#">게임</a>
+            <a href="#">스포츠</a>
+            <a href="#">학습 프로그램</a>
+            <a href="#">팟캐스트</a>
+            <hr>
+            <h5>YouTube 더보기</h5>
+            <a href="#">YouTube Premium</a>
+            <a href="#">Youtube 스튜디오</a>
+            <a href="#">YouTube Music</a>
+            <a href="#">YouTube Kids</a>
+            <hr>
+            <a href="#">설정</a>
+            <a href="#">신고 기록</a>
+            <a href="#">고객센터</a>
+            <a href="#">의견 보내기</a>
+            <hr>
+            <p>정보 보도자료 저작권 문의하기 <br> 크리에이터 광고 개발자</p>
+            <p>약관 개인정보처리방침 <br>
+            정책 및 안전 <br>
+            YouTube 작동의 원리 <br>
+            새로운 기능 테스트하기</p>
+            <p><small>&copy; 2025 Google LLC, Sunder Pichai, 1600 Amphitheatre Parkway, Mountain
+            View CA 94043, USA,
+            0807-882-594(무료), yt-support-solutions-kr@google.com,
+            호스팅:Google LLC,사업자정보,불법촬영물신고
+                <br> 크리에이터들이 유튜브 상에 게시, 태그 또는 추천한 상품들은 판매자들의 약관에 따라
+            판매됩니다. 유튜브는 이러한 제품들을 판매하지 않으며, 그에 대한 책임을 지지 않습니다.</small></p>
+        </div>
+
+        <!-- 🔸 메인 콘텐츠 영역 -->
+
+        <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+
+
+
 
     </nav>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -89,21 +157,24 @@
         <img src="./src/images/s1.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>청량한 날 듣는 가슴 벅차오르는 청춘 플레이리스트 | 청춘 + 초여름 = 극락</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 봄플리</small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 9개월 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s2.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>시끄러운 건 싫고 둠칫한 건 좋아 | 일할 때 듣기 좋은 플레이리스트</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 EDM 플리</small></p>
+            <p class="card-text"><small class="text-muted">조회수 7천회 | 업로드 2년 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s3.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>2025 인공지능 전문가 특강 | ChatGPT 이후3년, 달라진 우리 사회</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">AI들려주는 채널</small></p>
+            <p class="card-text"><small class="text-muted">조회수 1천회 | 업로드 7개월 전</small></p>
         </div>
     </div>
 </div>
@@ -112,21 +183,24 @@
         <img src="./src/images/s4.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>넷플릭스 화제의 신작 애니 : Saja Boys - Your Idol | 케이팝 데몬 헌터스 | 넷플릭스 | 가사해석</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 리뷰오타쿠</small></p>
+            <p class="card-text"><small class="text-muted">조회수 13만회 | 업로드 3개월 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s5.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text"><b>[정보처리기사 올인원]1-1-1.소프트웨어 개발 방법론</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><b>[정보처리기사 올인원]1-1-1.소프트웨어 개발 방법론 | 한방에 합격하는 법</b></p>
+            <p class="card-text"><small class="text-muted">이기적 채널</small></p>
+            <p class="card-text"><small class="text-muted">조회수 3만회 | 업로드 7년 전</small></p>
         </div>
     </div>
     <div class="card">
         <img src="./src/images/s6.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><b>Playlist 망했다... 마감 두시간 전 | 집중 안될때 듣기 좋은 트렌디한 팝송 플리</b></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">채널 재플리</small></p>
+            <p class="card-text"><small class="text-muted">조회수 1만회 | 업로드 5개월 전</small></p>
         </div>
     </div>
 </div>
