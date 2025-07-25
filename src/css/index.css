@@ -1,0 +1,211 @@
+ .vertical-aside {
+  position: fixed;
+  top: 50px; /* 네비게이션 바 아래로 내리기 */
+  left: 0;
+  height: calc(100% - 60px); /* 상단 바 높이만큼 줄이기 */
+  width: 70px;
+  font-size:9px;
+  background-color: #f8f9fa;
+  z-index: 1000;
+  padding-top: 20px;
+  padding-bottom:10px;
+  text-align:center;
+}
+.vertical-aside .nav-link{
+  padding: 10px 15px;
+  color: #333;
+  margin-bottom:10px;
+}
+.vertical-aside .nav-item {
+padding-top: 10px;
+  padding-bottom:10px;
+}
+.vertical-aside .nav-item:hover {
+  background-color: #e2e6ea;
+padding-top: 10px;
+  padding-bottom:10px;
+  border-radius:30px;
+}
+
+/* 상단 navbar에 z-index 적용 */
+.navbar {
+  z-index: 1100;
+  position: relative;
+  padding-left:70px;
+}
+.youtube-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius:30px;
+  padding: 5px;
+  margin: auto;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.search-container input {
+  flex: 1;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 45px 10px 15px; /* 오른쪽 공간 확보 */
+  font-size: 16px;
+  outline: none;
+}
+.search-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.mic-btn {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+    margin-top: 10px;
+ line-height: 1;
+   border-radius: 50px;
+   transition: color 0.2s ease;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+.search-btn:hover,
+.mic-btn:hover {
+  color: #000;
+}
+.mic {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          font-size: 24px; /* 아이콘 크기 조절 */
+          cursor: pointer;
+          color: inherit; /* 부모 컬러 상속 (필요시 지정 가능) */
+          line-height: 1;
+          margin-left:500px;
+        }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #363636;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav p {
+font-size:10px;
+}
+
+.sidenav a:hover {
+  color: #ffff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 35px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+       .sub-nav {
+  margin-left: 100px;
+}
+
+.sub-nav ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sub-nav ul li {
+  background-color: lightgray;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+  font-size: 10px;
+  width: auto; /* 글자 수에 따라 자동 너비 */
+}
+        .sub-nav ul li a {
+  color: black;
+  text-decoration:none;
+  font-size:10px;
+        }
+.sub-nav ul li:hover {
+  background-color: darkgray;
+  color:white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px; /* 좌우 여백으로 글자 수에 따라 넓이 조절됨 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+  font-size: 10px;
+  width: auto; /* 글자 수에 따라 자동 너비 */
+}
+
+.card-group {
+padding-top:30px;
+padding-left:90px;
+}
+        .card {
+        padding-left: 20px;
+        border:none;
+        overflow: hidden;
+
+        }
+        .card:hover {
+        cursor:pointer;
+        }
+        .card img {
+         width: 100%;
+  transition: transform 0.3s ease;
+
+
+        }
+        .card img:hover {
+        transform: scale(1.1);
+
+        }
